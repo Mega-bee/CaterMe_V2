@@ -1,19 +1,12 @@
 class ImageAsset {
-  static const ROOT = 'assets/images/';
-  static const LOGO = ROOT +'logo.png';
-  static const WATCH1 = ROOT +'watch.jpg';
-  static const WATCH2 = ROOT +'watch2.jpg';
-  static const WATCH3 = ROOT +'watch4 (1).jpg';
-  static const WATCH4 = ROOT +'watch4 (2).jpg';
-  static const WATCH5 = ROOT +'watch5.jpg.jpg';
-  static const ROLEX = ROOT +"ROLEX.png";
-  static const OTHERBRAND = ROOT +"OtherBrand.png";
-  static const RECHARD = ROOT +"girard.png";
-  static const PATEKPHILIPE = ROOT +"patekPhilipe.png";
-  static const GIRARD = ROOT +"girard.png";
-  static const AUDEMARSPIGUET = ROOT +"AudemarsPiguet.png";
-  static const SOLDOUT = ROOT +"Sold_out_label.png";
-  static const USER = ROOT +"user.png";
-  static const SEARCH = ROOT +"Search.png";
-  static const GOOGLE ="assets/images/google.png";
+  static const ROOT = 'Assets/Images/';
+  static const LOGO = ROOT +'Repeat Grid 1.png';
+  static const search = ROOT +'Icon awesome-search.png';
+  static const user = ROOT +'user.png';
+  static const breakfast = ROOT +'6gi5koKe6av1YULrp9Gfoffers with pattern [Recovered]-09-01.png';
+  static const ramadan = ROOT +'B0i4KZYLg2cSh5SN3e9aIftar ramadan extra.png';
+  static const shawarma = ROOT +'uuvVgrDn1uzTT6x3HCRjShawarma Station.png';
+  static const flower1 = ROOT +'2krfAf5eerQ5Is3f9tfVwhite roses.png';
+  static const flower2 = ROOT +'ChNa09jgm62fBKkVACm4red roses.png';
+  static const flower3 = ROOT +'pkxgKFM0S3vq9cBWxvU0pink roses.png';
 }

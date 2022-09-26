@@ -20,17 +20,18 @@ class _counterState extends State<counter> {
             color: Colors.white,
           ),
           child:
-          IconButton(onPressed: () {
+          Center(
+
+            child: IconButton(onPressed: () {
 
 
-          }, icon: Icon(Icons.add))
+            }, icon: Icon(Icons.add)),
+          )
 
 
       );
-        Container(
-          color: Colors.blueGrey,
-          width:300 ,
-        );
+
+
 
   }
 }

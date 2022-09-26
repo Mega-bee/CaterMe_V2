@@ -9,4 +9,10 @@ class ImageAsset {
   static const flower1 = ROOT +'2krfAf5eerQ5Is3f9tfVwhite roses.png';
   static const flower2 = ROOT +'ChNa09jgm62fBKkVACm4red roses.png';
   static const flower3 = ROOT +'pkxgKFM0S3vq9cBWxvU0pink roses.png';
+  static const cofee = ROOT +'offers with patternsquare only [Recovered]-05.png';
+  static const occasions = ROOT +'Icon awesome-calendar-check.png';
+  static const orders = ROOT +'Icon awesome-clipboard-list.png';
+  static const support = ROOT +'Icon awesome-headset.png';
+  static const notifactions = ROOT +'Path 2765.png';
+
 }

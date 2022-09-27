@@ -21,14 +21,7 @@ class _ModelsheetState extends State<Modelsheet> {
     return Scaffold(
 
       backgroundColor: BackgroundColor,
-      // height: MediaQuery.of(context).size.height * 0.95,
-      // decoration: new BoxDecoration(
-      //   color: Colors.white,
-      //   borderRadius: new BorderRadius.only(
-      //     topLeft: const Radius.circular(40.0),
-      //     topRight: const Radius.circular(40.0),
-      //   ),
-      // ),
+
       body: Container(
         height: MediaQuery.of(context).size.height * 0.95,
         decoration: new BoxDecoration(
@@ -171,7 +164,7 @@ class _ModelsheetState extends State<Modelsheet> {
                         color: Colors.white,
                       ),
                       width: double.infinity,
-                      height: 153,
+                      height: 160,
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Column(

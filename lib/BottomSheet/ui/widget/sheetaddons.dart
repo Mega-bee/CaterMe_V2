@@ -23,6 +23,7 @@ class Listswidget extends StatelessWidget {
           Image.asset(
             listskey.img.toString(),
           ),
+          Spacer(),
           Column(children: [
             Text('Iftar'),
             Text('100 sar'),

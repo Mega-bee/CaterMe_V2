@@ -33,6 +33,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_image_slideshow: any
+  flutter_localizations:
+    sdk: flutter
   syncfusion_flutter_calendar: ^20.2.49
 
 
@@ -46,6 +48,10 @@ dev_dependencies:
     sdk: flutter
   animated_text_kit:
   loading_animation_widget:
+  intl_utils:
+  rxdart:
+  hive:
+  hive_flutter:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -69,7 +75,8 @@ flutter:
   assets:
     - Assets/Images/
   #   - images/a_dot_ham.jpeg
-
+flutter_intl:
+  enabled: true
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

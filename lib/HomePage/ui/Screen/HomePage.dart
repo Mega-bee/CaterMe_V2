@@ -4,10 +4,8 @@ import 'package:caterme_v2/utils/Images/Images.dart';
 import 'package:caterme_v2/utils/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
-
 import '../../../BottomSheet/ui/Screen/Bottomsheet.dart';
+import '../../../Hive/Hive.dart';
 import '../../model/AddonsList.dart';
 import '../../model/CaroselList.dart';
 import '../../model/Flowerslist.dart';
@@ -30,15 +28,19 @@ class _HomepageState extends State<Homepage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: BackgroundColor,
+        backgroundColor: ThemeHelper().getisDark()
+            ? Colors.black
+            : Colors.white,
         leading: IconButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Settings()),
+                MaterialPageRoute(builder: (context) =>  Settings()),
               );
             },
-            icon: ImageIcon(AssetImage(ImageAsset.user.toString()))),
+            icon: ImageIcon(AssetImage(ImageAsset.user.toString()), color: ThemeHelper().getisDark()
+                ? Colors.white
+                : Colors.black,                )),
         centerTitle: true,
         title: Image.asset(
           ImageAsset.LOGO,
@@ -48,7 +50,9 @@ class _HomepageState extends State<Homepage> {
         actions: [
           IconButton(
               onPressed: () => null,
-              icon: ImageIcon(AssetImage(ImageAsset.search.toString())))
+              icon: ImageIcon(AssetImage(ImageAsset.search.toString()), color: ThemeHelper().getisDark()
+                  ? Colors.white
+                  : Colors.black,                ))
         ],
       ),
       body: SingleChildScrollView(

@@ -25,5 +25,9 @@ class ImageAsset {
   static const MODE = ROOT +'Mode.png';
   static const TERMS = ROOT +'terms.png';
   static const CONTACTUS = ROOT +'ContactUs.png';
-
+  static const logo = ROOT +'logo.png';
+  static const visa_logo = ROOT +'visa_logo.png';
+  static const iftar_ramadan = ROOT +'iftar_ramadan.png';
+  static const coffee = ROOT +'coffee.png';
+  static const BREAKFAST = ROOT +'breakfast.png';
 }

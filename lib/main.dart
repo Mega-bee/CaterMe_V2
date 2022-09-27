@@ -1,5 +1,5 @@
-import 'package:caterme_v2/HomePage/ui/Screen/HomePage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:caterme_v2/auth/ui/Screen/signin_screen.dart';
+import 'package:caterme_v2/utils/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'Hive/Hive.dart';

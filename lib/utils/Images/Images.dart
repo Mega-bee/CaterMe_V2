@@ -29,6 +29,5 @@ class ImageAsset {
   static const visa_logo = ROOT +'visa_logo.png';
   static const iftar_ramadan = ROOT +'iftar_ramadan.png';
   static const coffee = ROOT +'coffee.png';
-  static const breakfast = ROOT +'breakfast.png';
-
+  static const BREAKFAST = ROOT +'breakfast.png';
 }

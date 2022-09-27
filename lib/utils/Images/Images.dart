@@ -14,5 +14,16 @@ class ImageAsset {
   static const orders = ROOT +'Icon awesome-clipboard-list.png';
   static const support = ROOT +'Icon awesome-headset.png';
   static const notifactions = ROOT +'Path 2765.png';
+  static const OCCASION = ROOT +'Occasion.png';
+  static const ORDER = ROOT +'Order.png';
+  static const SUPPORT = ROOT +'Support.png';
+  static const PROFILE = ROOT +'Profile.png';
+  static const ADDRESSES = ROOT +'Addresses.png';
+  static const FRIENDS = ROOT +'Friends.png';
+  static const PAYMENT = ROOT +'Payment.png';
+  static const LANG = ROOT +'Lang.png';
+  static const MODE = ROOT +'Mode.png';
+  static const TERMS = ROOT +'terms.png';
+  static const CONTACTUS = ROOT +'ContactUs.png';
 
 }

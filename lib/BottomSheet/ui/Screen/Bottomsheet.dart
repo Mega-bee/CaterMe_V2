@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../Occasions/UI/Widget/calendar.dart';
 import '../../../utils/style/colors.dart';
 import '../../model/sheetaddonslist.dart';
 import '../widget/sheetaddons.dart';
@@ -14,21 +15,32 @@ class Modelsheet extends StatefulWidget {
 }
 
 class _ModelsheetState extends State<Modelsheet> {
+  TimeOfDay _time = TimeOfDay(hour: 7, minute: 15);
+
+  void _selectTime() async {
+    final TimeOfDay? newTime = await showTimePicker(
+      context: context,
+      initialTime: _time,
+    );
+    if (newTime != null) {
+      setState(() {
+        _time = newTime;
+      });
+    }
+  }
   late int n = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Container(
 
-      backgroundColor: BackgroundColor,
-
-      body: Container(
         height: MediaQuery.of(context).size.height * 0.95,
         decoration: new BoxDecoration(
           color: BackgroundColor,
+
           borderRadius: new BorderRadius.only(
-            topLeft: const Radius.circular(40.0),
-            topRight: const Radius.circular(40.0),
+            topLeft: const Radius.circular(30.0),
+            topRight: const Radius.circular(30.0),
           ),
         ),
         child: SingleChildScrollView(
@@ -36,47 +48,46 @@ class _ModelsheetState extends State<Modelsheet> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                height: 5,
+                height: 15,
               ),
-              SizedBox(
-                width: 400.0,
-                height: 68.0,
-                child: FloatingActionButton.extended(
-                  backgroundColor: PrimaryColor,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  label: Container(
-                    width: 350,
-                    child: Row(children: [
-                      Icon(Icons.calendar_month),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Whats your event?'),
-                          Text('Date,Places,guests...')
-                        ],
-                      ),
-                      Spacer(),
-                      Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(200),
-                            color: Colors.white,
-                          ),
-                          height: 35,
-                          width: 35,
-                          child: Center(
-                              child: Text(
-                                'X',
-                                style: TextStyle(
-                                    color: PrimaryColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 25),
-                              ))),
-                    ]),
+              Padding(
+                padding: const EdgeInsets.only(left: 8,right: 8),
+                child: SizedBox(
+                  width: 400.0,
+                  height: 68.0,
+                  child: FloatingActionButton.extended(
+
+                    backgroundColor: PrimaryColor,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    label: Container(
+
+                      width: 370,
+                      child: Row(children: [
+                        Icon(Icons.calendar_month),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('What s your event?',style: TextStyle(fontSize: 11),),
+                            Text('Date,Places,guests...',style: TextStyle(fontSize: 11),)
+                          ],
+                        ),
+                        Spacer(),
+                        Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(200),
+                              color: Colors.white,
+                            ),
+                            height: 35,
+                            width: 35,
+                            child: Center(
+                                child: Icon(FontAwesomeIcons.close,color: PrimaryColor,))),
+                      ]),
+                    ),
                   ),
                 ),
               ),
@@ -85,28 +96,45 @@ class _ModelsheetState extends State<Modelsheet> {
                 child: Column(
                   children: [
                     Container(
+                      height: 40,
+                      width: MediaQuery.of(context).size.width * 0.85,
+                      child: TextField(
+
+
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5)),
+                            hintText: 'Title of occasion.',
+                            hintStyle: TextStyle(
+                                fontSize: 14
+                            )
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+
+                    Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.white,
                         ),
                         width: double.infinity,
-                        height: 550,
+                        height: 500,
                         child: Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Column(
                             children: [
-                              TextField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  hintText: 'Title of occasion.',
-                                ),
-                              ),
+
+                              SizedBox(height: 20,),
                               SizedBox(
                                 height: 15,
                               ),
-                              SfCalendar(
-                                view: CalendarView.month,
+                              Container(
+                                  width: double.infinity,
+                                  height: MediaQuery.of(context).size.height * 0.35,
+                                  child: DemoApp()
                               ),
                               SizedBox(
                                 height: 20,
@@ -114,8 +142,8 @@ class _ModelsheetState extends State<Modelsheet> {
                               Row(
                                 children: [
                                   Text(
-                                    'Number of guests',
-                                    style: TextStyle(fontWeight: FontWeight.w600),
+                                    '   Number of guests',
+                                    style: TextStyle(fontWeight: FontWeight.w400),
                                   ),
                                   Spacer(),
                                   IconButton(
@@ -123,33 +151,48 @@ class _ModelsheetState extends State<Modelsheet> {
                                         n--;
                                         setState(() {});
                                       },
-                                      icon: Icon(Icons.arrow_back_ios_new_sharp)),
+                                      icon: Icon(Icons.arrow_back_ios_new_sharp,color: PrimaryColor,)),
                                   Text('  ' + n.toString() + '  '),
                                   IconButton(
                                       onPressed: () {
                                         n++;
                                         setState(() {});
                                       },
-                                      icon: Icon(Icons.arrow_forward_ios_sharp)),
+                                      icon: Icon(Icons.arrow_forward_ios_sharp,color: PrimaryColor,)),
                                 ],
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Row(
                                 children: [
                                   Text(
-                                    'Time of the event',
-                                    style: TextStyle(fontWeight: FontWeight.w600),
+                                    '   Time of the event',
+                                    style: TextStyle(fontWeight: FontWeight.w400),
                                   ),
-                                  Spacer(),
-                                  IconButton(
-                                      onPressed: null,
-                                      icon: Icon(Icons.arrow_back_ios_new_sharp)),
-                                  Text('  ' + n.toString() + '  '),
-                                  IconButton(
-                                      onPressed: null,
-                                      icon: Icon(Icons.arrow_forward_ios_sharp)),
+                                  SizedBox(width: 95,),
+                                  Container(
+                                    width:104,
+                                    height:40,
+                                    margin: const EdgeInsets.all(2.0),
+                                    padding: const EdgeInsets.all(3.0),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey)
+                                    ),
+                                    child: TextButton(
+                                      child: _time == null ? Text('Choose time', style: TextStyle(color: PrimaryColor,fontSize: 12),) : Row(
+                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text('${_time.format(context)}', style: TextStyle(color: PrimaryColor,fontSize: 12)),
+                                          Icon(Icons.arrow_drop_down,size: 15,color: PrimaryColor,)
+                                        ],
+                                      ),
+                                      onPressed: (){
+                                        _selectTime();
+                                      },
+                                    ),
+                                  )
+
                                 ],
                               ),
                             ],
@@ -164,7 +207,7 @@ class _ModelsheetState extends State<Modelsheet> {
                         color: Colors.white,
                       ),
                       width: double.infinity,
-                      height: 160,
+                      height: 180,
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: Column(
@@ -186,12 +229,12 @@ class _ModelsheetState extends State<Modelsheet> {
                                       borderRadius: BorderRadius.circular(5),
                                       border: Border.all(color: PrimaryColor)
                                     ),
-                                    width: 80,
+                                    width: 70,
                                     height: 20,
                                     child: Center(
                                       child: Text(
                                         'Select',
-                                        style: TextStyle(color: PrimaryColor),
+                                        style: TextStyle(color: PrimaryColor,fontSize: 11),
                                       ),
                                     ),
                                   ),
@@ -213,7 +256,7 @@ class _ModelsheetState extends State<Modelsheet> {
                               height: 5,
                             ),
                             Text(
-                              'one toplace your order',
+                              'one to place your order',
                               style: TextStyle(color: Colors.grey),
                             )
                           ],
@@ -229,13 +272,15 @@ class _ModelsheetState extends State<Modelsheet> {
                         color: Colors.white,
                       ),
                       width: double.infinity,
-                      height: 300,
+                      height: 330,
                       child:           Padding(
                         padding: const EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
                         child: SizedBox(
-                          height: 200,
+                          height: 300,
                           width: MediaQuery.of(context).size.width,
                           child: ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+
                             scrollDirection: Axis.vertical,
                             itemCount: Lists.length,
                             itemBuilder: (context, index) {
@@ -311,7 +356,7 @@ class _ModelsheetState extends State<Modelsheet> {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

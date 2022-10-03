@@ -13,6 +13,30 @@ final List<Secondlistmodle> List2 = [
     img: ImageAsset.breakfast,
   ),
   Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
+    img: ImageAsset.breakfast,
+  ),
+  Secondlistmodle(
     img: ImageAsset.ramadan,
   ),
   Secondlistmodle(

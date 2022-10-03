@@ -1,3 +1,5 @@
+import '../../utils/Images/Images.dart';
+
 class Firslistmodle {
   String? img;
 
@@ -7,16 +9,20 @@ class Firslistmodle {
 }
 
 final List<Firslistmodle> List1 = [
-  Firslistmodle(
-    img: 'Assets/Images/NoPath - Copy (21).png',
+ Firslistmodle(
+    img: ImageAsset.carosel,
   ),
   Firslistmodle(
-    img: 'Assets/Images/NoPath - Copy (21).png',
+    img: ImageAsset.carosel,
   ),
   Firslistmodle(
-    img: 'Assets/Images/NoPath - Copy (21).png',
+    img: ImageAsset.carosel,
   ),
   Firslistmodle(
-    img: 'Assets/Images/NoPath - Copy (21).png',
+    img: ImageAsset.carosel,
   ),
+  Firslistmodle(
+    img: ImageAsset.carosel,
+  ),
+
 ];

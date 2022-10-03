@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../utils/style/colors.dart';
 import '../../Models/addresses_model.dart';
 import '../Widgets/address_card.dart';
+import 'edit_address.dart';
 
 class AddressesScreen extends StatelessWidget {
 
@@ -20,7 +21,12 @@ class AddressesScreen extends StatelessWidget {
           ),
           title: Text('Addresses'),
           actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.add_circle_outline, color: Colors.white))
+            IconButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EditAddress()),
+              );
+            }, icon: Icon(Icons.add_circle_outline, color: Colors.white))
           ],
         ),
         body: SingleChildScrollView(

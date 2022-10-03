@@ -1,3 +1,4 @@
+import 'package:caterme_v2/utils/style/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_calendar/flutter_clean_calendar.dart';
@@ -52,15 +53,18 @@ class _DemoAppState extends State<DemoApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body:  SafeArea(
+
         child: Container(
+
           child: Calendar(
             startOnMonday: true,
-            selectedColor: Colors.blue,
-            todayColor: Colors.red,
+            selectedColor: PrimaryColor,
+            todayColor: PrimaryColor,
             eventColor: Colors.green,
-            eventDoneColor: Colors.amber,
-            bottomBarColor: Colors.deepOrange,
+            eventDoneColor: PrimaryColor,
+            bottomBarColor: PrimaryColor,
             onRangeSelected: (range) {
               print('selected Day ${range.from},${range.to}');
             },

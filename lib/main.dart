@@ -1,7 +1,6 @@
-import 'package:caterme_v2/auth/ui/Screen/signin_screen.dart';
-import 'package:caterme_v2/utils/style/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'Auth/signin_screen.dart';
 import 'Hive/Hive.dart';
 import 'Theme/Themes.dart';
 import 'localisation/localisation_service.dart';
@@ -28,23 +27,10 @@ class _MyAppState extends State<MyApp> {
       locale: Locale.fromSubtags(
         languageCode:lang,
       ),
-      // onGenerateTitle: (BuildContext context)=>S.of(context).Popular,
-      //
-      // localizationsDelegates: [
-      //   S.delegate,
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalCupertinoLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      //
-      //
-      // ],
-      // supportedLocales: S.delegate.supportedLocales,
-      theme:activeTheme,
-      // theme: ThemeData(),
-      // darkTheme: ThemeData.dark(),
-      // themeMode: _themeMode,
-      // 2) ← ← ← use "state" field here //////////////
-      home: Homepage(),
+      theme:ThemeData( textTheme: GoogleFonts.poppinsTextTheme(
+        Theme.of(context).textTheme,
+      ),),
+      home: SigninScreen(),
     );
   }
   @override
@@ -77,11 +63,6 @@ class _MyAppState extends State<MyApp> {
   /// 3) Call this to change theme from any context using "of" accessor
   /// e.g.:
   /// MyApp.of(context).changeTheme(ThemeMode.dark);
-//   void changeTheme(ThemeMode themeMode) {
-//     setState(() {
-//       _themeMode = themeMode;
-//     });
-//   }
 
 class MyApp extends StatefulWidget {
   @override

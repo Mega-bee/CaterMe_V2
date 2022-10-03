@@ -21,16 +21,26 @@ class Listswidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            listskey.img.toString(),
+            listskey.img.toString(),height: 100,
           ),
-          Spacer(),
-          Column(children: [
-            Text('Iftar'),
-            Text('100 sar'),
-            Container(
-             child: counterafter(),
-            )
-          ],)
+
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0,bottom: 8.0,left: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+              Text(listskey.text.toString()),
+              Text('100 sar'),
+              SizedBox(height: 10,),
+              Card(
+                  shape:  RoundedRectangleBorder( //
+                    borderRadius: BorderRadius.circular(40),
+
+                  ),
+                  child: counterafter())
+            ],),
+          )
         ],
       ),
 

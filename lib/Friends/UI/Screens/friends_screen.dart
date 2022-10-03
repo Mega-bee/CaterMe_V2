@@ -12,7 +12,7 @@ class FriendsScreen extends StatelessWidget {
         backgroundColor: PrimaryColor,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: (){},
+          onPressed: (){Navigator.pop(context);},
         ),
         title: Text('Friends'),
         actions: [

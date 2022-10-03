@@ -9,7 +9,7 @@ class PaymentMethods extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: PrimaryColor,
         title: Text('Payment methods'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),

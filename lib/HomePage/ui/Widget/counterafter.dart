@@ -15,16 +15,16 @@ class _counterafterState extends State<counterafter> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
 
       ),
-      height: 20,
-      width: 105,
+      height: 30,
+      width: 90,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(onPressed:
           (){
@@ -40,8 +40,6 @@ class _counterafterState extends State<counterafter> {
               count==1?
               Icon(Icons.delete,size: 15,color: PrimaryColor,):
               Icon(FontAwesomeIcons.minus,size: 15,color: PrimaryColor,)),
-
-
           Text(count.toString()),
           IconButton(onPressed: (){
 

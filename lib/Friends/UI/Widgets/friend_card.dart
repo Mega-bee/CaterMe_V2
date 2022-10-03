@@ -33,7 +33,7 @@ class FriendCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.account_circle_outlined, color: PrimaryColor, size: 30),
+              child: Icon(Icons.account_circle_outlined, color: Colors.grey, size: 30),
             ),
             SizedBox(width: 20),
             Padding(

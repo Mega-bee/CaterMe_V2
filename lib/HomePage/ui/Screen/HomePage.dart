@@ -134,17 +134,13 @@ class _HomepageState extends State<Homepage> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: SizedBox(
-                height: 240,
-                child: SizedBox(
-                  height: 140,
-                  width: MediaQuery.of(context).size.width,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: List3.length,
-                    itemBuilder: (context, index) {
-                      return List3widget(list3key: List3[index]);
-                    },
-                  ),
+                height: 150,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: List3.length,
+                  itemBuilder: (context, index) {
+                    return List3widget(list3key: List3[index]);
+                  },
                 ),
               ),
             ),

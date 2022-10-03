@@ -49,89 +49,102 @@ class _profile extends State<profile> {
                       SizedBox(
                         height: 15.0,
                       ),
-                      TextField(
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: 'First name',
-                          labelStyle:TextStyle(color: Colors.grey),
-                          fillColor: Colors.white,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                      Card(
+                        elevation: 3,
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            labelText: 'First name',
+                            labelStyle:TextStyle(color: Colors.black),
+                            fillColor: Colors.white,
+                            filled: true,
+
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
                       SizedBox(
                         height: 15.0,
                       ),
-                      TextField(
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: 'Last name',
-                          labelStyle:TextStyle(color: Colors.grey),
-                          fillColor: Colors.white,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                      Card(
+                        elevation: 3,
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            labelText: 'Last name',
+                            labelStyle:TextStyle(color: Colors.black),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
                       SizedBox(
                         height: 15.0,
                       ),
-                      TextField(
+                      Card(
+                        elevation: 3,
+                        child: TextField(
 
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          labelText: 'Gender',
-                          labelStyle:TextStyle(color: Colors.grey),
-                          fillColor: Colors.white,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            labelText: 'Gender',
+                            labelStyle:TextStyle(color: Colors.black),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            suffixIcon: IconButton(onPressed: () {
+                              showModalBottomSheet(context: context,builder:(context)=>Container(
+                                height: 200.0,
+                                width: double.infinity,
+                                color: Colors.white,
+                              )
+                              );
+
+
+                            }, icon: Icon(Icons.arrow_downward),),
+
+
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          suffixIcon: IconButton(onPressed: () {
-                            showModalBottomSheet(context: context,builder:(context)=>Container(
-                              height: 200.0,
-                              width: double.infinity,
-                              color: Colors.white,
-                            )
-                            );
-
-
-                          }, icon: Icon(Icons.arrow_downward),),
-
-
                         ),
                       ),
                       SizedBox(
                         height: 15.0,
                       ),
-                      TextField(
-                        keyboardType: TextInputType.datetime,
-                        decoration: InputDecoration(
-                          labelText: 'Date Of birth',
-                          labelStyle:TextStyle(color: Colors.grey),
-                          fillColor: Colors.white,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                      Card(
+                        elevation: 3,
+                        child: TextField(
+                          keyboardType: TextInputType.datetime,
+                          decoration: InputDecoration(
+                            labelText: 'Date Of birth',
+                            labelStyle:TextStyle(color: Colors.black),
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
@@ -155,7 +168,7 @@ class _profile extends State<profile> {
                             ),
                             onPressed: () {},
                             child: const Text(
-                              'Save',style: TextStyle(color: Colors.white),
+                              'Save',style: TextStyle(color: Colors.white,fontSize: 25),
                             ),
                           ),
                         ),
@@ -188,15 +201,16 @@ class _profile extends State<profile> {
                           labelText: 'Email address',
                           labelStyle:TextStyle(color: Colors.grey),
                           hintText: 'Example@gmail.com',
+                          hintStyle: TextStyle(fontWeight: FontWeight.w900),
                           fillColor: Colors.white,
                           filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
+                          // border: OutlineInputBorder(
+                          //   borderRadius: BorderRadius.circular(5),
+                          //   borderSide: BorderSide(color: Colors.grey),
+                          // ),
+                          // focusedBorder: OutlineInputBorder(
+                          //   borderSide: BorderSide(color: Colors.grey),
+                          // ),
                         ),
                       ),
 
@@ -204,16 +218,17 @@ class _profile extends State<profile> {
                         keyboardType: TextInputType.phone,
                         decoration: InputDecoration(
                           hintText: '+96100000000',
+                          hintStyle: TextStyle(fontWeight: FontWeight.w900),
                           labelText: 'Phone number',
                           labelStyle:TextStyle(color: Colors.grey),
                           fillColor: Colors.white,
                           filled: true,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5),
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           suffixIcon: Icon(Icons.edit, color: PrimaryColor,),
                         ),
@@ -239,7 +254,7 @@ class _profile extends State<profile> {
                     crossAxisAlignment: CrossAxisAlignment.center,
 
                     children: [
-                      Icon(Icons.lock),
+                      Icon(Icons.lock_outline),
 
                       TextButton(onPressed: (){}, child: Text(
                         "Change password",
@@ -268,11 +283,11 @@ class _profile extends State<profile> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Icons.delete, color: Colors.red,),
+                      Icon(Icons.delete_outline, color: Colors.red,),
                       TextButton(onPressed: (){}, child: Text(
                         "Delete my account",
                         style: TextStyle(
-                          color: PrimaryColor,
+                          color: Colors.red,
                         ),
                       ),
                       ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../model/AddonsList.dart';
 import 'Counter.dart';
+import 'counterafter.dart';
 
 
 
@@ -35,7 +36,7 @@ class List3widget extends StatelessWidget {
                   child: Align(
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
-                      child: counter(),
+                      child: counterafter(),
                     ),
                     alignment: Alignment.topRight,
                   ),

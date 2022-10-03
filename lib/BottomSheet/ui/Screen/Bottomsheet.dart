@@ -128,9 +128,7 @@ class _ModelsheetState extends State<Modelsheet> {
                             children: [
 
                               SizedBox(height: 20,),
-                              SizedBox(
-                                height: 15,
-                              ),
+
                               Container(
                                   width: double.infinity,
                                   height: MediaQuery.of(context).size.height * 0.35,

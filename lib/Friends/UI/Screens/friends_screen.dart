@@ -30,7 +30,7 @@ class FriendsScreen extends StatelessWidget {
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: 'Full Name',
-                              suffixIcon: Icon(Icons.contact_mail, size: 20, color: PrimaryColor),
+                              suffixIcon: Icon(Icons.contact_mail, size: 20, color: Colors.grey),
                               hintStyle: TextStyle(color: Colors.grey),
                               filled: true,
                               fillColor: Colors.white,

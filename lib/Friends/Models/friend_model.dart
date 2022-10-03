@@ -1,19 +1,19 @@
 class Friend {
   String name;
-
-  Friend({required this.name});
+int number;
+  Friend({required this.name,required this.number});
 }
 
 List<Friend> friends = [
 
-  Friend(name: 'Walid Sami'),
-  Friend(name: 'Samir Mohammad'),
-  Friend(name: 'Adam Karim'),
-  Friend(name: 'Omar Salem'),
-  Friend(name: 'Ali Ahmad'),
-  Friend(name: 'Tarek Mohammad'),
-  Friend(name: 'Salim Salim'),
-  Friend(name: 'Ibrahim Ibrahim'),
+  Friend(name: 'Walid Sami',number: 76537388),
+  Friend(name: 'Samir Mohammad',number: 76537388),
+  Friend(name: 'Adam Karim',number: 76537388),
+  Friend(name: 'Omar Salem',number: 76537388),
+  Friend(name: 'Ali Ahmad',number: 76537388),
+  Friend(name: 'Tarek Mohammad',number: 76537388),
+  Friend(name: 'Salim Salim',number: 76537388),
+  Friend(name: 'Ibrahim Ibrahim',number: 76537388),
 
 
 ];

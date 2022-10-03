@@ -29,23 +29,22 @@ class _HomepageState extends State<Homepage> {
       backgroundColor: Colors.white,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
-
         elevation: 0,
-        backgroundColor: ThemeHelper().getisDark()
-            ? Colors.black
-            : Colors.white,
+        backgroundColor:
+            ThemeHelper().getisDark() ? Colors.black : Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 8,right: 8),
+          padding: const EdgeInsets.only(left: 8, right: 8),
           child: IconButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  Settings()),
+                  MaterialPageRoute(builder: (context) => Settings()),
                 );
               },
-              icon: ImageIcon(AssetImage(ImageAsset.user.toString()), color: ThemeHelper().getisDark()
-                  ? Colors.white
-                  : Colors.black,                )),
+              icon: ImageIcon(
+                AssetImage(ImageAsset.user.toString()),
+                color: ThemeHelper().getisDark() ? Colors.white : Colors.black,
+              )),
         ),
         centerTitle: true,
         title: Padding(
@@ -59,9 +58,10 @@ class _HomepageState extends State<Homepage> {
         actions: [
           IconButton(
               onPressed: () => null,
-              icon: ImageIcon(AssetImage(ImageAsset.search.toString()), color: ThemeHelper().getisDark()
-                  ? Colors.white
-                  : Colors.black,                ))
+              icon: ImageIcon(
+                AssetImage(ImageAsset.search.toString()),
+                color: ThemeHelper().getisDark() ? Colors.white : Colors.black,
+              ))
         ],
       ),
       body: SingleChildScrollView(
@@ -80,26 +80,30 @@ class _HomepageState extends State<Homepage> {
                     autoPlay: true,
                   ),
                   itemCount: List1.length,
-                  itemBuilder: (context, itemIndex, realIndex)
-                  {
-                    return List1widget(list1key:List1[itemIndex]);
-                  },),
+                  itemBuilder: (context, itemIndex, realIndex) {
+                    return List1widget(list1key: List1[itemIndex]);
+                  },
+                ),
               ),
             ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
-              child: Text('  Menus', style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18),),
+            SizedBox(
+              height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              child: Text(
+                '  Menus',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: Text(
                 '   Choose one of our special menus',
-
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: SizedBox(
                 height: 300,
                 width: double.infinity,
@@ -107,28 +111,39 @@ class _HomepageState extends State<Homepage> {
                   shrinkWrap: false,
                   scrollDirection: Axis.horizontal,
                   itemCount: List2.length,
-
                   itemBuilder: (context, index) {
-                    return List2widget(list2key: List2[index]);
-                  }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    return List2widget(
+                        list2key: List2[index],
+                        ontap: () {
+                          List2.forEach((element) {
+                            print(element);
+                            element.check == !element.check! ;
+                          });
+                          List2[index].check == true;
+                          print(List2.where((element) => element.check=false));
+                        });
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                  childAspectRatio: 3/4.7,
-
-
-                ),
+                    childAspectRatio: 3 / 4.7,
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: 50,),
-            Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
-              child: Text('  Add-ons', style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18),),
+            SizedBox(
+              height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              child: Text(
+                '  Add-ons',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: Text(
                 '   Extra add-ons to your special menu',
-
               ),
             ),
             Padding(
@@ -144,16 +159,20 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
             ),
-            SizedBox(height: 50,),
-            Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
-              child: Text('  Flowers', style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18),),
+            SizedBox(
+              height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 10,left: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10),
+              child: Text(
+                '  Flowers',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: Text(
                 '   Roses are red,violets are blue',
-
               ),
             ),
             Padding(
@@ -170,12 +189,14 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
             ),
-            SizedBox(height: 130,),
+            SizedBox(
+              height: 130,
+            ),
           ],
         ),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 8,right: 8),
+        padding: const EdgeInsets.only(left: 8, right: 8),
         child: SizedBox(
           width: 400.0,
           height: 68.0,
@@ -184,7 +205,6 @@ class _HomepageState extends State<Homepage> {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-
                 isScrollControlled: true,
                 backgroundColor: Colors.transparent,
                 builder: (context) => Modelsheet(),
@@ -203,8 +223,14 @@ class _HomepageState extends State<Homepage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('What s your event?',style: TextStyle(fontSize: 11),),
-                        Text('Date,Places,guests...',style: TextStyle(fontSize: 11),)
+                        Text(
+                          'What s your event?',
+                          style: TextStyle(fontSize: 11),
+                        ),
+                        Text(
+                          'Date,Places,guests...',
+                          style: TextStyle(fontSize: 11),
+                        )
                       ],
                     ),
                     Spacer(),

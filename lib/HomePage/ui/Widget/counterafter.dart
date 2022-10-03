@@ -21,8 +21,8 @@ class _counterafterState extends State<counterafter> {
         color: Colors.white,
 
       ),
-      height: 30,
-      width: 90,
+      height: MediaQuery.of(context).size.height*0.04,
+      width: 120,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

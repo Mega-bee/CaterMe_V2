@@ -11,7 +11,7 @@ class listslistmodle {
 
 final List<listslistmodle> Lists = [
   listslistmodle(
-    img: ImageAsset.ramadan,text: "ramadan iftar extra"
+    img: ImageAsset.ramadan,text: "Iftar Ramadan Extra"
   ),
   listslistmodle(
     img: ImageAsset.ramadan,text: "breakfast"

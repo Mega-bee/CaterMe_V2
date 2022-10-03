@@ -9,27 +9,27 @@ class AddressesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: PrimaryColor,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: (){
-              Navigator.pop(context);
-            },
-          ),
-          title: Text('Addresses'),
-          actions: [
-            IconButton(onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EditAddress()),
-              );
-            }, icon: Icon(Icons.add_circle_outline, color: Colors.white))
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: PrimaryColor,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: (){
+            Navigator.pop(context);
+          },
         ),
-        body: SingleChildScrollView(
+        title: Text('Addresses'),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EditAddress()),
+            );
+          }, icon: Icon(Icons.add_circle_outline, color: Colors.white))
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
             child: Column(

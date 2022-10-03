@@ -36,7 +36,7 @@ class _profile extends State<profile> {
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: Colors.white),
 
 
-                height: 400.0,
+                height: MediaQuery.of(context).size.height*0.6,
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsetsDirectional.only(
@@ -156,7 +156,7 @@ class _profile extends State<profile> {
                           bottom: 15.0,
                         ),
                         child: Container(
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
                           height: 50,
                           width: MediaQuery.of(context).size.width * 0.95,
                           child: ElevatedButton(

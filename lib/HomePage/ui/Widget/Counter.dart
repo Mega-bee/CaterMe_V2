@@ -16,12 +16,7 @@ class _counterState extends State<counter> {
 
   @override
   Widget build(BuildContext context) {
-    return  InkWell(
-       onTap: (){check=!check!;
-       setState(() {
-
-       });},
-      child: Container(
+    return Container(
         alignment: Alignment.center,
             height: 30,
             width: 30,
@@ -29,8 +24,12 @@ class _counterState extends State<counter> {
               borderRadius: BorderRadius.circular(100),
               color: Colors.white,
             ),
-            child:
-                check==false?
+            child:InkWell(
+              onTap: (){check=!check!;
+              setState(() {
+
+              });},
+               child: check==false?
           Icon(Icons.add,color: PrimaryColor,):
           Icon(Icons.check,color: PrimaryColor,),
 

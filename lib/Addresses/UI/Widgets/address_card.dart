@@ -14,7 +14,6 @@ class AddressCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: double.infinity,
         height: 100,
         child: Row(
           children: [

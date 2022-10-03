@@ -29,6 +29,7 @@ class _SettingsState extends State<Settings> {
         backgroundColor: ThemeHelper().getisDark()
             ? Colors.black
             : PrimaryColor,
+        centerTitle: false,
         title: Text(
           'Settings',
           style: TextStyle( color:Colors.white              ),
@@ -83,7 +84,9 @@ class _SettingsState extends State<Settings> {
                             SizedBox(
                               height: 10,
                             ),
-                            Text('Notifications'),
+                            Text('Notifications',style: TextStyle(color: ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,  ),),
                           ],
                         ),
                         Column(
@@ -105,7 +108,9 @@ class _SettingsState extends State<Settings> {
                             SizedBox(
                               height: 10,
                             ),
-                            Text('Orders'),
+                            Text('Orders',style: TextStyle(color: ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,  ),),
                           ],
                         ),
                         Column(
@@ -127,7 +132,9 @@ class _SettingsState extends State<Settings> {
                             SizedBox(
                               height: 10,
                             ),
-                            Text('Occasions'),
+                            Text('Occasions',style: TextStyle(color: ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,  ),),
                           ],
                         ),
                         Column(
@@ -144,7 +151,9 @@ class _SettingsState extends State<Settings> {
                             SizedBox(
                               height: 10,
                             ),
-                            Text('Support'),
+                            Text('Support',style: TextStyle(color: ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,  ),),
                           ],
                         ),
                       ],
@@ -181,8 +190,12 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.person_outline),
-                              Text('  Profile'),
+                              Icon(Icons.person_outline,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
+                              Text('  Profile',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,  ),),
                             ],
                           ),
                         ),
@@ -204,10 +217,14 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.location_on_outlined),
+                              Icon(Icons.location_on_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
                               Text(
-                                '  Addreses',
-                              ),
+                                '  Addreses',style: TextStyle(color: ThemeHelper().getisDark()
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),)
                             ],
                           ),
                         ),
@@ -231,8 +248,13 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.people_alt_outlined),
-                              Text('  Freinds'),
+                              Icon(Icons.people_alt_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
+                              Text('  Freinds',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                        ),),
                             ],
                           ),
                         ),
@@ -256,8 +278,13 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.payment_outlined),
-                              Text('  Payment method'),
+                              Icon(Icons.payment_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
+                              Text('  Payment method',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                              ),),
                             ],
                           ),
                         ),
@@ -295,7 +322,11 @@ class _SettingsState extends State<Settings> {
                                             'Language',
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w700,
-                                                fontSize: 20),
+                                                fontSize: 20,
+                                              color: ThemeHelper().getisDark()
+                                                ? Colors.white
+                                                : Colors.black,
+                                            ),
                                           ),
                                         ),
                                         InkWell(
@@ -307,7 +338,7 @@ class _SettingsState extends State<Settings> {
                                           },
                                           child: Container(
                                             color: select == true
-                                                ? Color(0xffEC605A)
+                                                ? Color(0xFFBDBDBD)
                                                 : Colors.white,
                                             width: double.infinity,
                                             child: Padding(
@@ -326,7 +357,7 @@ class _SettingsState extends State<Settings> {
                                           },
                                           child: Container(
                                             color: select == false
-                                                ? Color(0xffEC605A)
+                                                ? const Color(0xFFBDBDBD)
                                                 : Colors.white,
                                             width: double.infinity,
                                             child: Padding(
@@ -347,8 +378,13 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.language_outlined),
-                              Text('  Languages'),
+                              Icon(Icons.language_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
+                              Text('  Languages',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                              ),),
                             ],
                           ),
                         ),
@@ -365,110 +401,98 @@ class _SettingsState extends State<Settings> {
                               context: context,
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
-                              builder: (context) =>
-                                  StatefulBuilder(builder: (context, setState) {
-                                    return Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          0.26,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(20),
-                                              topRight: Radius.circular(20))),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Mode',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 15),
-                                            ),
-                                            SizedBox(
-                                              height: 30,
-                                            ),
-                                            InkWell(
-                                              onTap: () {
-
-                                                light = !light!;
-                                                AppThemeDataService()
-                                                    .switchDarkMode(true);
-                                                Navigator.pop(context);
-                                              },
-                                              child: Container(
-                                                color: light == false
-                                                    ? Color(0xffEC605A)
-                                                    : Colors.white,
-                                                height: 25,
-                                                width: double.infinity,
-                                                child: Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(Icons.dark_mode, color: ThemeHelper().getisDark()
-                                                          ? Colors.white
-                                                          : Colors.black,                ),
-                                                      SizedBox(
-                                                        width: 20,
-                                                      ),
-                                                      Text('dark',style: TextStyle( color: ThemeHelper().getisDark()
-                                                          ? Colors.white
-                                                          : Colors.black,                ),),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            InkWell(
-                                              onTap: () {
-
-                                                AppThemeDataService()
-                                                    .switchDarkMode(false);
-                                                Navigator.pop(context);
-                                              },
-                                              child: Container(
-                                                color: light == true
-                                                    ? Color(0xffEC605A)
-                                                    : Colors.white,
-                                                height: 25,
-                                                width: double.infinity,
-                                                child: Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(Icons.light_mode),
-                                                      SizedBox(
-                                                        width: 20,
-                                                      ),
-                                                      Text(
-                                                        'light',
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            )
-                                          ],
+                              builder: (context) => StatefulBuilder(
+                                builder: (context, setState) {
+                                  return Container(
+                                    height:
+                                    MediaQuery.of(context).size.height *
+                                        0.26,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(20),
+                                            topRight: Radius.circular(20))),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Text(
+                                            'Mode',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 20),
+                                          ),
                                         ),
-                                      ),
-                                    );
-                                  }));
+                                        InkWell(
+                                          onTap: () {
+                                            AppThemeDataService()
+                                                .switchDarkMode(false);
+                                            Navigator.pop(context);
+                                            print(select);
+                                            setState(() {
+                                              light = true;
+                                            });
+                                          },
+                                          child: Container(
+                                            color: light == true
+                                                ? Color(0xFFBDBDBD)
+                                                : Colors.white,
+                                            width: double.infinity,
+                                            child: Padding(
+                                              padding:
+                                              const EdgeInsets.all(15.0),
+                                              child: Text('Light'),
+                                            ),
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: () {
+                                            AppThemeDataService()
+                                                .switchDarkMode(true);
+                                            Navigator.pop(context);
+                                            print(select);
+                                            setState(() {
+                                              light = false;
+                                            });
+                                          },
+                                          child: Container(
+                                            color: light == false
+                                                ? const Color(0xFFBDBDBD)
+                                                : Colors.white,
+                                            width: double.infinity,
+                                            child: Padding(
+                                              padding:
+                                              const EdgeInsets.all(15.0),
+                                              child: Text('Dark'),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              ));
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.light_mode_outlined),
-                              Text('  Mode'),
+                              Icon(Icons.light_mode_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                              ),
+                              Text('  Mode',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                              ),),
                             ],
                           ),
                         ),
                       ),
+
                       Padding(
                         padding: const EdgeInsets.only(right: 15.0, left: 15.0),
                         child: Divider(
@@ -480,8 +504,13 @@ class _SettingsState extends State<Settings> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Icon(Icons.newspaper_outlined),
-                            Text('  Terms'),
+                            Icon(Icons.newspaper_outlined,color:ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,),
+                            Text('  Terms',style: TextStyle(color: ThemeHelper().getisDark()
+                                ? Colors.white
+                                : Colors.black,
+                            ),),
                           ],
                         ),
                       ),
@@ -504,9 +533,14 @@ class _SettingsState extends State<Settings> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Icon(Icons.contact_mail_outlined),
+                              Icon(Icons.contact_mail_outlined,color:ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,),
                               Text(
-                                '  Contact us',
+                                '  Contact us',style: TextStyle(color: ThemeHelper().getisDark()
+                                  ? Colors.white
+                                  : Colors.black,
+                              ),
                               ),
                             ],
                           ),

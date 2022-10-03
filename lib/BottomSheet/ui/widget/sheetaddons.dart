@@ -23,16 +23,14 @@ class Listswidget extends StatelessWidget {
           Image.asset(
             listskey.img.toString(),height: 100,
           ),
-
           Padding(
             padding: const EdgeInsets.only(top: 8.0,bottom: 8.0,left: 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-              Text(listskey.text.toString()),
-              Text('100 sar'),
-              SizedBox(height: 10,),
+              Text(listskey.text.toString(),style: const TextStyle(fontWeight: FontWeight.bold),),
+              const Text('100 sar',style: TextStyle(color: Colors.grey),),
               Card(
                   shape:  RoundedRectangleBorder( //
                     borderRadius: BorderRadius.circular(40),

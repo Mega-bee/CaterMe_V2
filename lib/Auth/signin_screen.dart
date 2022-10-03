@@ -8,9 +8,9 @@ import '../utils/style/colors.dart';
 class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Container(
             width: double.infinity,

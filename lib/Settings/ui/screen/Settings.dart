@@ -73,13 +73,13 @@ class _SettingsState extends State<Settings> {
                         Column(
                           children: [
                             Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: BackgroundColor,
-                              ),
-                              width: 60,
-                              height: 60,
-                              child:Icon(Icons.notifications_outlined,color: PrimaryColor,)
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: BackgroundColor,
+                                ),
+                                width: 60,
+                                height: 60,
+                                child:Icon(Icons.notifications_outlined,color: PrimaryColor,)
                             ),
                             SizedBox(
                               height: 10,
@@ -96,13 +96,13 @@ class _SettingsState extends State<Settings> {
                                 Navigator.push(context, MaterialPageRoute(builder:(context)=> OrderScreen()));
                               },
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: BackgroundColor,
-                                ),
-                                width: 60,
-                                height: 60,
-                                child:Icon(Icons.list_alt_outlined,color: PrimaryColor,)
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: BackgroundColor,
+                                  ),
+                                  width: 60,
+                                  height: 60,
+                                  child:Icon(Icons.list_alt_outlined,color: PrimaryColor,)
                               ),
                             ),
                             SizedBox(
@@ -120,13 +120,13 @@ class _SettingsState extends State<Settings> {
                                 Navigator.push(context, MaterialPageRoute(builder:(context)=> OccasionsScreen()));
                               },
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: BackgroundColor,
-                                ),
-                                width: 60,
-                                height: 60,
-                                child: Icon(Icons.calendar_today_outlined,color: PrimaryColor,)
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: BackgroundColor,
+                                  ),
+                                  width: 60,
+                                  height: 60,
+                                  child: Icon(Icons.calendar_today_outlined,color: PrimaryColor,)
                               ),
                             ),
                             SizedBox(
@@ -140,13 +140,13 @@ class _SettingsState extends State<Settings> {
                         Column(
                           children: [
                             Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: BackgroundColor,
-                              ),
-                              width: 60,
-                              height: 60,
-                              child: Icon(Icons.support_agent_outlined,color: PrimaryColor,)
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: BackgroundColor,
+                                ),
+                                width: 60,
+                                height: 60,
+                                child: Icon(Icons.support_agent_outlined,color: PrimaryColor,)
                             ),
                             SizedBox(
                               height: 10,
@@ -222,8 +222,8 @@ class _SettingsState extends State<Settings> {
                                   : Colors.black,),
                               Text(
                                 '  Addreses',style: TextStyle(color: ThemeHelper().getisDark()
-                                    ? Colors.white
-                                    : Colors.black,
+                                  ? Colors.white
+                                  : Colors.black,
                               ),)
                             ],
                           ),
@@ -254,7 +254,7 @@ class _SettingsState extends State<Settings> {
                               Text('  Freinds',style: TextStyle(color: ThemeHelper().getisDark()
                                   ? Colors.white
                                   : Colors.black,
-                        ),),
+                              ),),
                             ],
                           ),
                         ),
@@ -321,11 +321,11 @@ class _SettingsState extends State<Settings> {
                                           child: Text(
                                             'Language',
                                             style: TextStyle(
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 20,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 20,
                                               color: ThemeHelper().getisDark()
-                                                ? Colors.white
-                                                : Colors.black,
+                                                  ? Colors.white
+                                                  : Colors.black,
                                             ),
                                           ),
                                         ),

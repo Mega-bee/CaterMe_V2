@@ -1,0 +1,148 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import '../../../utils/style/colors.dart';
+import '../../Models/friend_model.dart';
+import '../Widgets/friend_card.dart';
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
+class FriendsScreen extends StatefulWidget {
+  // Friend? friend;
+  @override
+  State<FriendsScreen> createState() => _FriendsScreenState();
+}
+class _FriendsScreenState extends State<FriendsScreen> {
+  late TextEditingController _textEditingController = TextEditingController();
+  final FlutterContactPicker _contactPicker = FlutterContactPicker();
+  late Contact _contact;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: PrimaryColor,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text('Friends'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Container(
+                              width: 300,
+                              height: 70,
+                              padding: EdgeInsets.all(10.0),
+                              child: TextField(
+                                controller:_textEditingController,
+                                decoration: InputDecoration(
+                                  hintText: 'Full Name',
+                                  suffixIcon: IconButton(
+                                      icon: Icon(Icons.contact_mail,),
+                                      onPressed: ()async {
+                                        Contact? contact = await _contactPicker.selectContact();
+                                        setState(() {
+                                          _contact = contact!;
+                                          _textEditingController = (_contact == null ? 'No contact selected.' : _contact.toString()) as TextEditingController;
+                                        });
+                                      },
+                                      iconSize: 20, color: Colors.grey),
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(12.0)),
+                                    borderSide: BorderSide(
+                                        color: Colors.white, width: 0.5),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    borderSide: BorderSide(
+                                        color: Colors.grey, width: 2),
+                                  ),
+                                ),
+                              )),
+                          Container(
+                              width: 300,
+                              height: 70,
+                              padding: EdgeInsets.all(10.0),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Phone Number',
+                                  suffixIcon: Icon(Icons.phone_android,
+                                      size: 20, color: PrimaryColor),
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(12.0)),
+                                    borderSide: BorderSide(
+                                        color: Colors.white, width: 0.5),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    borderSide: BorderSide(
+                                        color: Colors.grey, width: 2),
+                                  ),
+                                ),
+                              )),
+                          Padding(
+                              padding: EdgeInsets.only(left: 14, top: 50),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size(240, 45),
+                                  maximumSize: const Size(240, 50),
+                                  primary: PrimaryColor,
+                                ),
+                                onPressed: () async {
+                                },
+                                child: Text('Add'),
+                              )),
+                        ],
+                      );
+                    });
+              },
+              icon: Icon(Icons.add_circle_outline, color: Colors.white))
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            children: [
+              SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
+                child: Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 1,
+                  child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return FriendCard(friends[index]);
+                    },
+                    itemCount: friends.length,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

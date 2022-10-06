@@ -13,7 +13,7 @@ class ImageAsset {
   static const occasions = ROOT +'Icon awesome-calendar-check.png';
   static const orders = ROOT +'Icon awesome-clipboard-list.png';
   static const support = ROOT +'Icon awesome-headset.png';
-  static const notifactions = ROOT +'Path 2765.png';
+  static const notifactions = ROOT +'Icon ionic-ios-notifications-outline.png';
   static const OCCASION = ROOT +'Occasion.png';
   static const ORDER = ROOT +'Order.png';
   static const SUPPORT = ROOT +'Support.png';
@@ -25,5 +25,17 @@ class ImageAsset {
   static const MODE = ROOT +'Mode.png';
   static const TERMS = ROOT +'terms.png';
   static const CONTACTUS = ROOT +'ContactUs.png';
+  static const logo = ROOT +'logo.png';
+  static const visa_logo = ROOT +'visa_logo.png';
+  static const iftar_ramadan = ROOT +'iftar_ramadan.png';
+  static const coffee = ROOT +'coffee.png';
+  static const BREAKFAST = ROOT +'breakfast.png';
+  static const logo2 = ROOT +'accepted logo cater me1-01.png';
+  static const carosel = ROOT +'NoPath - Copy (25).png';
+  static const saj = ROOT +'iig5kU0ixOXfONnrzo5aoffers with patternsquare only [Recovered]-15.png';
+  static const bbq = ROOT +'nHW6npLMKREAFYfKVZXFBBQ station.png';
+  static const omlet = ROOT +'mQUdQXWL0t38aJj1v2y1offers with patternsquare only [Recovered]-16.png';
+
+
 
 }

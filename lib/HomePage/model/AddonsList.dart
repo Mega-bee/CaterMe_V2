@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../utils/Images/Images.dart';
 
 class Thirdlistmodle {
@@ -13,16 +15,14 @@ final List<Thirdlistmodle> List3 = [
     img: ImageAsset.shawarma,
   ),
   Thirdlistmodle(
-    img: ImageAsset.shawarma,
+    img: ImageAsset.saj,
   ),
   Thirdlistmodle(
-    img: ImageAsset.shawarma,
+    img: ImageAsset.bbq,
   ),
   Thirdlistmodle(
-    img: ImageAsset.shawarma,
+    img: ImageAsset.omlet,
   ),
-  Thirdlistmodle(
-    img: ImageAsset.shawarma,
-  ),
+
 
 ];

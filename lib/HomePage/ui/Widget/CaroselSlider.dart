@@ -17,14 +17,15 @@ class List1widget extends StatelessWidget {
       child: InkWell(
         onTap: () => null,
         child: SizedBox(
-          height: 300,
+          height: 500,
           width: 400,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
+
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                list1key.img.toString(),fit: BoxFit.cover,
+                list1key.img.toString(),fit: BoxFit.cover,height: 250,
               ),
             ),
           ),

@@ -3,23 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../utils/style/colors.dart';
 import '../../Models/friend_model.dart';
 import '../Widgets/friend_card.dart';
-// import 'package:contact_picker/contact_picker.dart';
-
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
 class FriendsScreen extends StatefulWidget {
   // Friend? friend;
   @override
   State<FriendsScreen> createState() => _FriendsScreenState();
 }
 class _FriendsScreenState extends State<FriendsScreen> {
-//   final ContactPicker contactPicker = new ContactPicker();
-// String? number;
-// String? name;
-//   @override
-//   void initState() {
-//     number = "";
-//     name = "";
-//     super.initState();
-//   }
+  late TextEditingController _textEditingController = TextEditingController();
+  final FlutterContactPicker _contactPicker = FlutterContactPicker();
+  late Contact _contact;
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +44,17 @@ class _FriendsScreenState extends State<FriendsScreen> {
                               height: 70,
                               padding: EdgeInsets.all(10.0),
                               child: TextField(
+                                controller:_textEditingController,
                                 decoration: InputDecoration(
                                   hintText: 'Full Name',
                                   suffixIcon: IconButton(
                                       icon: Icon(Icons.contact_mail,),
-                                      onPressed: ()async{
-                                        // Contact contact =
-                                        // await contactPicker.selectContact();
-                                        // if (contact != null) {
-                                        //   number = contact.phoneNumber.number;
-                                        //   name = contact.fullName;
-                                        //   setState(() {});
-                                        // }
+                                      onPressed: ()async {
+                                        Contact? contact = await _contactPicker.selectContact();
+                                        setState(() {
+                                          _contact = contact!;
+                                          _textEditingController = (_contact == null ? 'No contact selected.' : _contact.toString()) as TextEditingController;
+                                        });
                                       },
                                       iconSize: 20, color: Colors.grey),
                                   hintStyle: TextStyle(color: Colors.grey),
